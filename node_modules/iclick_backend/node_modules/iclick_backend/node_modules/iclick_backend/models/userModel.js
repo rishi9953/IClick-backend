@@ -3,7 +3,7 @@ const connection = require('../db/connection');
 // Fetch all users
 async function getAllUsers() {
   return new Promise((resolve, reject) => {
-    connection.query('SELECT * FROM db_user.users_details', (err, results) => {
+    connection.query('SELECT * FROM db_user.users', (err, results) => {
       if (err) {
         reject(err);
       } else {
@@ -14,7 +14,7 @@ async function getAllUsers() {
 }
 async function getUser(value) {
   return new Promise((resolve, reject) => {
-    connection.query(`SELECT * FROM db_user.users_details where user_id = '${value}' or username = '${value}' or name = '${value}'`, (err, results) => {
+    connection.query(`SELECT * FROM db_user.users where id = '${value}' or name = '${value}'`, (err, results) => {
       if (err) {
         reject(err);
       } else {

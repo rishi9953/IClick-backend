@@ -14,10 +14,8 @@ async function fetchAllUsers(req, res) {
 async function fetchUser(req, res) {
   try {
     var value = '';
-    if (req.body.user_id) {
-      value = req.body.user_id;
-    } else if (req.body.username) {
-      value = req.body.username;
+    if (req.body.id) {
+      value = req.body.id;
     } else {
       value = req.body.name;
     }
