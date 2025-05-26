@@ -5,7 +5,7 @@ async function addPosts(postData) {
         const { title, description, createdAt } = postData;
         connection.query(
             'INSERT INTO db_user.posts (title, description, createdAt) VALUES (?, ?, ?)',
-            [title, description, createdAt],
+            [title, description, new Date()],
             (err, results) => {
                 if (err) {
                     reject(err);
